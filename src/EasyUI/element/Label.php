@@ -23,6 +23,7 @@ class Label extends Element {
     }
 
     public function assignResult($result): void {
+        /** @noinspection PhpUnnecessaryReturnInspection */
         return;
     }
 

@@ -14,14 +14,10 @@ namespace EasyUI\element;
 
 class Input extends Element {
 
-    /** @var string|null */
-    private $defaultText;
+    private ?string $defaultText;
+    private ?string $placeholder;
 
-    /** @var string|null */
-    private $placeholder;
-
-    /** @var null|string */
-    private $submittedText = null;
+    private ?string $submittedText = null;
 
     public function __construct(?string $headerText, ?string $defaultText = null, ?string $placeholder = null) {
         $this->defaultText = $defaultText;

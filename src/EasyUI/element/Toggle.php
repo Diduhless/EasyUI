@@ -14,11 +14,9 @@ namespace EasyUI\element;
 
 class Toggle extends Element {
 
-    /** @var bool */
-    private $defaultChoice;
+    private bool $defaultChoice;
 
-    /** @var null|bool */
-    private $submittedChoice = null;
+    private ?bool $submittedChoice = null;
 
     public function __construct(?string $headerText, bool $defaultChoice = false) {
         $this->defaultChoice = $defaultChoice;

@@ -26,7 +26,7 @@ use ReflectionException;
 class FormResponse {
 
     /** @var Element[] */
-    private $elements;
+    private array $elements;
 
     /**
      * FormResponse constructor.
@@ -60,6 +60,7 @@ class FormResponse {
      * @param string $id
      * @param string $expectedClass
      * @return Element|Input|Toggle|Slider|Selector
+     * @noinspection PhpDocSignatureInspection
      */
     private function getElement(string $id, string $expectedClass): Element {
         $element = $this->elements[$id] ?? null;
@@ -68,7 +69,8 @@ class FormResponse {
         } elseif(!is_a($element, $expectedClass)) {
             try {
                 throw new InvalidArgumentException("The element with $id is not a " . (new ReflectionClass($expectedClass))->getShortName());
-            } catch(ReflectionException $exception) {
+            } /** @noinspection PhpUnusedLocalVariableInspection */
+            catch(ReflectionException $exception) {
                 throw new InvalidArgumentException($expectedClass . " doesn't use a valid... namespace?");
             }
         }

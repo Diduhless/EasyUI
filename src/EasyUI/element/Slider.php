@@ -14,20 +14,13 @@ namespace EasyUI\element;
 
 class Slider extends Element {
 
-    /** @var float */
-    private $minStep;
+    private float $minStep;
+    private float $maxStep;
 
-    /** @var float */
-    private $maxStep;
+    private float $defaultStep;
+    private float $stepLength;
 
-    /** @var float */
-    private $defaultStep;
-
-    /** @var float */
-    private $stepLength;
-
-    /** @var null|float */
-    private $submittedStep = null;
+    private ?float $submittedStep = null;
 
     public function __construct(?string $headerText, float $minStep, float $maxStep, float $defaultStep = 0, float $stepLength = 0) {
         $this->minStep = $minStep;
